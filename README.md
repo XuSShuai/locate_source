@@ -3,7 +3,7 @@
 ## About
 
 Locating source based on sparesly placed observers and utilizes the correlated information between network structure 
-(shortest path) and diffusion dynamic(time sequence of infection) on complex network.
+(shortest path) and diffusion dynamic(time sequence of infection) on complex network. `Paper Locating the epidemic source in complex networks`
 
 ## Version
 
@@ -20,3 +20,5 @@ Implemented by python3.
 
    - `base_expriment_code.py` test the average accuracy of algorithm under different percentage of observers on "BA" network and "ER" network, respectively.
 
+ - how_to_select_observers
+   - `how_to_select_observers.py` test the performance of algorithm under different observers selection strategy, the strategies include not limited to set nodes who with the bigger degree/closeness/betweeness or the smaller ones as observers. All the results of experiment save to "plot/..".
