@@ -3,7 +3,7 @@
 ## About
 
 Locating source based on sparesly placed observers and utilizes the correlated information between network structure 
-(shortest path) and diffusion dynamic(time sequence of infection) on complex network. `Paper Locating the epidemic source in complex networks`
+(shortest path) and diffusion dynamic(time sequence of infection) on complex network. Paper `Locating the epidemic source in complex networks`
 
 ## Version
 
