@@ -54,6 +54,12 @@ def select_observers(network, strategy, proportion=0.1, tread_off=0.1):
         closeness_centrality = dict(nx.closeness_centrality(G=network))
         closeness_centrality_stored = sorted(closeness_centrality.items(), key=lambda x: x[1])
         observers = [x[0] for x in closeness_centrality_stored][:observer_nodes_size]
+    elif strategy == "mix_degree":
+        degree_dict = dict(nx.degree(network))
+        degree_sorted_by_value = sorted(degree_dict.items(), key=lambda x: x[1], reverse=True)
+        small = tread_off * observer_nodes_size
+        big = observer_nodes_size - small
+        observers = [x[0] for x in degree_sorted_by_value[:small]] + [x[0] for x in degree_sorted_by_value[-big:]]
     elif strategy == "random":
         observers = np.random.randint(0, nx.number_of_nodes(network), observer_nodes_size)
 
