@@ -22,3 +22,9 @@ Implemented by python3.
 
  - how_to_select_observers
    - `how_to_select_observers.py` test the performance of algorithm under different observers selection strategy, the strategies include not limited to set nodes who with the bigger degree/closeness/betweeness or the smaller ones as observers. All the results of experiment save to "plot/..".
+   
+- empirical_network
+  - test the performance of algorithm on four empirical networks
+  
+- plot
+  - save and visualize the result of the algorithm.
