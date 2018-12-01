@@ -1,6 +1,7 @@
 import numpy as np
 import networkx as nx
 from si_model import si_diffusion
+from scipy.stats import pearsonr
 
 
 def select_observers(network, strategy, proportion=0.1, tread_off=0.1):
@@ -79,6 +80,10 @@ def cos_similarity(sequence1, sequence2):
     return np.sum((np.array(sequence1) * np.array(sequence2)))/(np.linalg.norm(sequence1) * np.linalg.norm(sequence2))
 
 
+def pearson_similarity(sequence1, sequence2):
+    return pearsonr(sequence1, sequence2)[0]
+
+
 def dtr_algorithm(network_type, network_size, observers_strategy, observers_rate=0.1,
                   er_m=0, ba_m=3, beta=0.9, candidate=False, print_detail_info=False):
     """
@@ -117,6 +122,7 @@ def dtr_algorithm(network_type, network_size, observers_strategy, observers_rate
     for node in candidate_sources_list:
         distance_2_observers = [nx.shortest_path_length(net, node, x) for x in observers]
         source_score = cos_similarity(observers_infected_times, distance_2_observers)
+        # source_score = pearson_similarity(observers_infected_times, distance_2_observers)
         scores[node] = source_score
 
     scores_sorted = sorted(scores.items(), key=lambda x: x[1], reverse=True)
