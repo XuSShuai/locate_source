@@ -29,6 +29,8 @@ Implemented by python3.
 - plot
   - save and visualize the result of the algorithm.
   
-  ## Some results
   
-  ![different correlation method](https://github.com/XuSShuai/locate_source/blob/master/plot/correlation/soogif.gif)
+## Some results
+  
+  
+![different correlation method](https://github.com/XuSShuai/locate_source/blob/master/plot/correlation/soogif.gif)
